@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Field-Health Monitoring — VINIS Case Study</title>
+  <meta name="description" content="How VINIS monitors cricket field health across five South African unions with satellite imagery and MediCoach Smart Club scorecard data — turning play load into automated maintenance job cards for rest, irrigation and topsoil." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='6' fill='none' stroke='%233ad6e6' stroke-width='2'/%3E%3Ccircle cx='16' cy='16' r='13' fill='none' stroke='%233ad6e6' stroke-width='1' stroke-dasharray='3 3' opacity='.6'/%3E%3Ccircle cx='16' cy='3' r='2.5' fill='%23b6f24a'/%3E%3C/svg%3E" />
+</head>
+<body>
+
+  <!-- ============ NAV ============ -->
+  <nav class="nav" id="nav">
+    <div class="wrap nav-inner">
+      <a href="index.html" class="brand" aria-label="VINIS home">
+        <svg class="mark" viewBox="0 0 32 32" fill="none" aria-hidden="true">
+          <circle cx="16" cy="16" r="6" stroke="#3ad6e6" stroke-width="2"/>
+          <circle cx="16" cy="16" r="13" stroke="#3ad6e6" stroke-width="1" stroke-dasharray="3 3" opacity=".6"/>
+          <circle cx="16" cy="3" r="2.5" fill="#b6f24a"/>
+        </svg>
+        <span>VINIS<br><span class="sub">Vast Infrastructure Inspection</span></span>
+      </a>
+      <div class="nav-links" id="navLinks">
+        <a href="index.html">Home</a>
+        <a href="platform.html">Platform</a>
+        <a href="solutions.html">Solutions</a>
+        <a href="case-studies.html" class="active">Case Studies</a>
+        <a href="team.html">Team</a>
+        <a href="index.html#contact" class="btn btn-primary">
+          Request a demo
+          <svg viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+      </div>
+      <button class="nav-toggle" id="navToggle" aria-label="Menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ============ PAGE HEADER ============ -->
+  <header class="page-header" id="top">
+    <div class="wrap">
+      <a href="case-studies.html#cases" class="back-link reveal">
+        <svg viewBox="0 0 16 16" fill="none" width="14" height="14"><path d="M13 8H3M7 4L3 8l4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        Case study 01 · Field health
+      </a>
+      <h1 class="reveal">Grading the turf of a nation, <em>from orbit.</em></h1>
+      <p class="lead reveal d1">
+        VINIS turns years of satellite imagery — combined with live match data — into a single,
+        comparable measure of field health for every cricket ground. Delivered across five
+        provincial unions, so each can see which grounds are thriving, which are declining, and
+        which need attention, without setting foot on one.
+      </p>
+      <div class="union-chips reveal d2">
+        <span class="union-chip"><span class="dot"></span>KZN Coastal</span>
+        <span class="union-chip"><span class="dot"></span>KZN Midlands</span>
+        <span class="union-chip"><span class="dot"></span>Gauteng</span>
+        <span class="union-chip"><span class="dot"></span>Pretoria</span>
+        <span class="union-chip"><span class="dot"></span>Western Cape</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- ============ STAT BAND ============ -->
+  <section class="strip">
+    <div class="wrap">
+      <div class="strip-grid">
+        <div class="strip-item">
+          <div class="k hl"><span data-count="5" data-dec="0">5</span></div>
+          <div class="l">Provincial unions covered</div>
+        </div>
+        <div class="strip-item">
+          <div class="k"><span data-count="3" data-dec="0">3</span></div>
+          <div class="l">Satellite sensors fused</div>
+        </div>
+        <div class="strip-item">
+          <div class="k"><span data-count="4" data-dec="0">4</span></div>
+          <div class="l">Spectral indices per scene</div>
+        </div>
+        <div class="strip-item">
+          <div class="k">0–100</div>
+          <div class="l">Composite condition score</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CHALLENGE ============ -->
+  <section class="section-pad" id="challenge">
+    <div class="wrap">
+      <div class="split">
+        <div class="reveal">
+          <span class="eyebrow"><span class="num">01</span> The challenge</span>
+          <h2 style="font-family:var(--display);font-size:var(--t-2xl);font-weight:500;line-height:1.1;letter-spacing:-0.02em;margin-bottom:1.6rem;">
+            You can't manage what you can't measure.
+          </h2>
+          <p style="color:var(--text-2);font-size:var(--t-lg);">
+            A union may be responsible for scores of grounds — cricket clubs, schools and
+            university ovals spread across a province. Turf condition drives playability,
+            safety and cost, yet the only way to assess it has been to send someone to look.
+          </p>
+        </div>
+        <div class="reveal d1">
+          <div class="problem-list">
+            <div class="problem-item">
+              <span class="pn">01</span>
+              <div><h4>Manual, subjective, slow</h4><p>On-the-ground assessment can't cover every ground before a season — and two inspectors rarely score the same field the same way.</p></div>
+            </div>
+            <div class="problem-item">
+              <span class="pn">02</span>
+              <div><h4>No history, no trend</h4><p>Without a consistent record, a slowly declining outfield looks fine right up until it doesn't.</p></div>
+            </div>
+            <div class="problem-item">
+              <span class="pn">03</span>
+              <div><h4>Condition without cause</h4><p>Seeing that a field is worn is one thing — knowing it's from a heavy run of play is what tells you how to fix it.</p></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ HOW IT WORKS ============ -->
+  <section class="section-pad" id="how" style="background:var(--bg-2);border-block:1px solid var(--border);">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="eyebrow"><span class="num">02</span> How it works</span>
+        <h2>From raw pixels to a <em>field-health score.</em></h2>
+        <p>Every ground is watched by a stack of satellites and reduced to one number you can track over time.</p>
+      </div>
+      <div class="steps">
+        <div class="step reveal">
+          <div class="sn">STAGE 01</div>
+          <svg class="icn" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="7" y="9" width="10" height="6" rx="1"/><path d="M3 6l4 3M3 18l4-3M21 6l-4 3M21 18l-4-3M12 15v4M9 19h6"/></svg>
+          <h3>Multi-sensor capture</h3>
+          <p>Sentinel-2 and Landsat 8/9 revisit each ground again and again — hundreds of scenes per site build a deep, five-year-plus history of the turf.</p>
+        </div>
+        <div class="step reveal d1">
+          <div class="sn">STAGE 02</div>
+          <svg class="icn" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 12h4l3-8 4 16 3-8h4"/></svg>
+          <h3>Spectral indexing</h3>
+          <p>Four indices — NDVI, NDWI, BSI and NDRE — pull vegetation vigour, moisture, bare-soil exposure and early plant stress out of every image.</p>
+        </div>
+        <div class="step reveal d2">
+          <div class="sn">STAGE 03</div>
+          <svg class="icn" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="9"/><path d="M12 12l4-2M12 7v5"/></svg>
+          <h3>Scoring &amp; trend</h3>
+          <p>The indices fuse into a single 0–100 condition score, benchmarked against a 5-year mean, with a per-year trend and automatic anomaly flags.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ SIGNALS (ANIMATED) ============ -->
+  <section class="section-pad" id="signals">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="eyebrow"><span class="num">03</span> The signals</span>
+        <h2>Four ways to read a field.</h2>
+        <p>The satellite sees things the eye can't. Watch each lens light up a different part of the same field — no science degree required.</p>
+      </div>
+
+      <div class="lens reveal" id="lens">
+        <div class="lens-figwrap">
+          <div class="lens-fig" data-mode="0">
+            <svg viewBox="0 0 300 300" role="img" aria-label="A cricket field seen through four satellite lenses">
+              <defs><filter id="soft" x="-30%" y="-30%" width="160%" height="160%"><feGaussianBlur stdDeviation="9"/></filter></defs>
+              <!-- base field -->
+              <ellipse cx="150" cy="150" rx="146" ry="146" fill="#123018"/>
+              <ellipse cx="150" cy="150" rx="146" ry="146" fill="none" stroke="rgba(255,255,255,0.08)"/>
+              <ellipse cx="150" cy="150" rx="88" ry="88" fill="none" stroke="rgba(255,255,255,0.08)" stroke-dasharray="4 5"/>
+              <rect x="141" y="92" width="18" height="116" rx="2" fill="#3b3427"/>
+              <!-- NDVI (vegetation vigour) -->
+              <g class="m m0" filter="url(#soft)">
+                <circle cx="105" cy="110" r="34" fill="#3fae5a"/>
+                <circle cx="200" cy="185" r="40" fill="#4bbf66"/>
+                <circle cx="120" cy="205" r="26" fill="#2f8f48"/>
+                <circle cx="205" cy="95" r="22" fill="#7bd48f" opacity="0.7"/>
+              </g>
+              <!-- NDWI (moisture) -->
+              <g class="m m1" filter="url(#soft)">
+                <circle cx="120" cy="180" r="42" fill="#3ad6e6"/>
+                <circle cx="195" cy="120" r="30" fill="#49b6e0"/>
+                <circle cx="215" cy="205" r="20" fill="#8a6a3a" opacity="0.6"/>
+              </g>
+              <!-- BSI (bare soil / wear) -->
+              <g class="m m2" filter="url(#soft)">
+                <rect x="132" y="86" width="36" height="30" rx="6" fill="#c08a3e"/>
+                <rect x="132" y="184" width="36" height="30" rx="6" fill="#c08a3e"/>
+                <ellipse cx="95" cy="95" rx="30" ry="14" transform="rotate(-35 95 95)" fill="#b07a3a"/>
+                <ellipse cx="205" cy="205" rx="30" ry="14" transform="rotate(-35 205 205)" fill="#b07a3a"/>
+              </g>
+              <!-- NDRE (early stress) -->
+              <g class="m m3" filter="url(#soft)">
+                <circle cx="150" cy="150" r="120" fill="#2f8f48" opacity="0.35"/>
+                <circle cx="110" cy="130" r="16" fill="#8b6cf0"/>
+                <circle cx="195" cy="175" r="13" fill="#a07cf5"/>
+                <circle cx="165" cy="95" r="10" fill="#7c6cf0"/>
+              </g>
+            </svg>
+          </div>
+          <div class="lens-now">
+            <div class="lq" id="lensQ">Is the grass healthy?</div>
+            <div class="lsub" id="lensSub">NDVI — green cover &amp; biomass</div>
+          </div>
+        </div>
+
+        <div class="lens-tabs" id="lensTabs">
+          <button class="lens-tab active" data-i="0" style="color:#4bbf66">
+            <span class="code">NDVI</span>
+            <span><span class="lt-q">Is the grass healthy?</span><br><span class="lt-sub">GREEN COVER &amp; BIOMASS</span></span>
+            <span class="swatch" style="background:#4bbf66"></span>
+          </button>
+          <button class="lens-tab" data-i="1" style="color:#3ad6e6">
+            <span class="code">NDWI</span>
+            <span><span class="lt-q">Is there enough moisture?</span><br><span class="lt-sub">WATER · IRRIGATION &amp; DROUGHT</span></span>
+            <span class="swatch" style="background:#3ad6e6"></span>
+          </button>
+          <button class="lens-tab" data-i="2" style="color:#e0a040">
+            <span class="code">BSI</span>
+            <span><span class="lt-q">Where is it worn bare?</span><br><span class="lt-sub">EXPOSED SOIL · WEAR &amp; THINNING</span></span>
+            <span class="swatch" style="background:#e0a040"></span>
+          </button>
+          <button class="lens-tab" data-i="3" style="color:#8b6cf0">
+            <span class="code">NDRE</span>
+            <span><span class="lt-q">Where is it stressed?</span><br><span class="lt-sub">HIDDEN STRESS · BEFORE IT SHOWS</span></span>
+            <span class="swatch" style="background:#8b6cf0"></span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ MEDICOACH INTEGRATION ============ -->
+  <section class="section-pad" id="medicoach" style="background:var(--bg-2);border-block:1px solid var(--border);">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="eyebrow"><span class="num">04</span> Operational data · MediCoach Smart Club</span>
+        <h2>The field knows <em>how hard it's been played.</em></h2>
+        <p>We partnered with MediCoach Smart Club to feed live scorecards into the field-health model — every ball bowled and run scored becomes a measure of load. Satellite tells you a field's condition; MediCoach tells you why.</p>
+      </div>
+
+      <div class="mc-flow reveal">
+        <div class="mc-node src2">
+          <span class="mc-src">MediCoach Smart Club</span>
+          <p>Scorecards — balls bowled, overs, runs, foot traffic on run-ups &amp; creases.</p>
+        </div>
+        <div class="mc-op">+</div>
+        <div class="mc-node">
+          <span class="mc-src">VINIS satellite</span>
+          <p>Condition score, wear and moisture for every ground, over time.</p>
+        </div>
+        <div class="mc-op">→</div>
+        <div class="mc-node hl">
+          <span class="mc-src">Field intelligence</span>
+          <p>Load, true asset quality, and automated maintenance job cards.</p>
+        </div>
+      </div>
+
+      <div class="feat-grid">
+        <div class="feat reveal">
+          <svg class="icn" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 17l5-5 4 3 8-9"/><path d="M21 6v5h-5"/></svg>
+          <h4>Load</h4>
+          <p>Balls bowled, overs and running between the wickets convert into a load index — how much wear the play is actually putting on the surface.</p>
+        </div>
+        <div class="feat reveal d1">
+          <svg class="icn" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 3l8 4v6c0 5-4 8-8 10-4-2-8-5-8-10V7l8-4Z"/><path d="M9 12l2 2 4-4"/></svg>
+          <h4>Asset quality</h4>
+          <p>Satellite condition set against play load gives the true quality of each ground as an asset — not just how it looks, but how it's holding up.</p>
+        </div>
+        <div class="feat reveal d2">
+          <svg class="icn" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 4h6a2 2 0 012 2v13a2 2 0 01-2 2H9a2 2 0 01-2-2V6a2 2 0 012-2Z"/><path d="M10 4V3h4v1M9.5 12l1.5 1.5 3.5-3.5"/></svg>
+          <h4>Maintenance support</h4>
+          <p>High load plus declining condition automatically raises maintenance job cards — the right intervention, on the right ground, at the right time.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FIELD IN FOCUS (RECOVERY ANIMATION) ============ -->
+  <section class="section-pad" id="example">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="eyebrow"><span class="num">05</span> A field in focus</span>
+        <h2>From heavy season to healthy turf.</h2>
+        <p>A worked example on a fictional ground — Riverside Oval — showing how load, satellite condition and automated job cards work together. Press play, or step through it.</p>
+      </div>
+
+      <div class="rec reveal" id="rec" data-step="0">
+        <div class="rec-head">
+          <h3>Riverside Oval</h3>
+          <span class="rec-loc">FICTIONAL EXAMPLE · KZN COASTAL</span>
+        </div>
+
+        <div class="rec-body">
+          <!-- field visual -->
+          <div class="rec-field">
+            <svg viewBox="0 0 300 270" role="img" aria-label="Riverside Oval condition, changing as load is applied and interventions are made">
+              <defs><filter id="soft2" x="-30%" y="-30%" width="160%" height="160%"><feGaussianBlur stdDeviation="7"/></filter></defs>
+              <!-- healthy base -->
+              <ellipse cx="150" cy="135" rx="142" ry="122" fill="#123018"/>
+              <ellipse cx="150" cy="135" rx="142" ry="122" fill="none" stroke="rgba(255,255,255,0.08)"/>
+              <ellipse cx="150" cy="135" rx="86" ry="74" fill="none" stroke="rgba(255,255,255,0.08)" stroke-dasharray="4 5"/>
+              <g filter="url(#soft2)" opacity="0.55">
+                <circle cx="105" cy="105" r="30" fill="#3fae5a"/>
+                <circle cx="200" cy="165" r="34" fill="#3fae5a"/>
+              </g>
+              <rect x="141" y="80" width="18" height="110" rx="2" fill="#3b3427"/>
+              <!-- wear layer -->
+              <g class="wear">
+                <ellipse cx="150" cy="135" rx="142" ry="122" fill="#7a2e22" opacity="0.30" filter="url(#soft2)"/>
+                <rect x="135" y="74" width="30" height="26" rx="5" fill="#9a5a2a" filter="url(#soft2)"/>
+                <rect x="135" y="170" width="30" height="26" rx="5" fill="#9a5a2a" filter="url(#soft2)"/>
+                <path d="M150 92 L96 46" stroke="#9a5a2a" stroke-width="11" stroke-linecap="round" opacity="0.75" filter="url(#soft2)"/>
+                <path d="M150 92 L206 46" stroke="#9a5a2a" stroke-width="11" stroke-linecap="round" opacity="0.75" filter="url(#soft2)"/>
+                <path d="M150 178 L96 224" stroke="#9a5a2a" stroke-width="11" stroke-linecap="round" opacity="0.75" filter="url(#soft2)"/>
+                <path d="M150 178 L206 224" stroke="#9a5a2a" stroke-width="11" stroke-linecap="round" opacity="0.75" filter="url(#soft2)"/>
+              </g>
+            </svg>
+          </div>
+
+          <!-- panel -->
+          <div class="rec-panel">
+            <div class="rec-cap" id="recCap">Baseline — the field is healthy and match-ready.</div>
+
+            <div>
+              <div class="rec-score-row">
+                <span class="rlabel">Field-health score</span>
+                <span class="big" id="recScore" style="color:var(--lime)">78</span>
+              </div>
+              <div class="meter"><div class="meter-fill" id="recMeter" style="width:78%;background:var(--lime)"></div></div>
+            </div>
+
+            <div>
+              <div class="rec-load-head">
+                <span class="rlabel">Season load · from MediCoach</span>
+                <span class="load-badge" id="recBadge">LOW</span>
+              </div>
+              <div class="rec-load">
+                <div class="load-stat"><div class="lv" id="ldBalls">0</div><div class="ll">Balls bowled</div></div>
+                <div class="load-stat"><div class="lv" id="ldSingles">0</div><div class="ll">Singles</div></div>
+                <div class="load-stat"><div class="lv" id="ldTwos">0</div><div class="ll">Twos</div></div>
+                <div class="load-stat"><div class="lv" id="ldThrees">0</div><div class="ll">Threes</div></div>
+              </div>
+            </div>
+
+            <div>
+              <div class="rec-jobs-label">Automated job cards</div>
+              <div class="rec-jobs">
+                <div class="jobcard">
+                  <svg class="jc-icn" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+                  <div><h6>Rest — 14 days</h6><p>Take the square out of rotation to let the worn ends recover.</p></div>
+                  <span class="jc-done">DONE</span>
+                </div>
+                <div class="jobcard">
+                  <svg class="jc-icn" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 3s6 7 6 11a6 6 0 01-12 0c0-4 6-11 6-11Z"/></svg>
+                  <div><h6>Targeted irrigation</h6><p>Raise moisture on the dry, high-wear running lines flagged by NDWI.</p></div>
+                  <span class="jc-done">DONE</span>
+                </div>
+                <div class="jobcard">
+                  <svg class="jc-icn" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 17h18M5 17l3-6h8l3 6M9 11V7h6v4"/></svg>
+                  <div><h6>Topsoil to worn ends</h6><p>Re-dress and re-seed the bare pitch ends picked up by BSI.</p></div>
+                  <span class="jc-done">DONE</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="rec-controls">
+          <div class="rec-dots" id="recDots">
+            <button class="rec-dot active" data-s="0" aria-label="Step 1"></button>
+            <button class="rec-dot" data-s="1" aria-label="Step 2"></button>
+            <button class="rec-dot" data-s="2" aria-label="Step 3"></button>
+            <button class="rec-dot" data-s="3" aria-label="Step 4"></button>
+          </div>
+          <span class="rec-step-name" id="recStepName">Baseline</span>
+          <button class="rec-replay" id="recReplay">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12a9 9 0 109-9 9 9 0 00-7 3.3M3 3v3.3h3.3"/></svg>
+            Replay
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CTA ============ -->
+  <section class="section-pad" id="contact" style="background:var(--bg-2);border-top:1px solid var(--border);">
+    <div class="wrap">
+      <div class="cta reveal">
+        <h2>Grade your grounds from orbit.</h2>
+        <p>Cricket union, school estate or turf portfolio — we'll score every ground you manage, and tell you what to do about it.</p>
+        <div class="hero-cta">
+          <a href="mailto:info@rorschach.co.za?subject=VINIS%20field-health%20enquiry" class="btn btn-primary">
+            Request a demo
+            <svg viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+          <a href="case-studies.html#cases" class="btn btn-ghost">All case studies</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="footer">
+    <div class="wrap">
+      <div class="footer-grid">
+        <div>
+          <a href="index.html" class="brand">
+            <svg class="mark" viewBox="0 0 32 32" fill="none" aria-hidden="true">
+              <circle cx="16" cy="16" r="6" stroke="#3ad6e6" stroke-width="2"/>
+              <circle cx="16" cy="16" r="13" stroke="#3ad6e6" stroke-width="1" stroke-dasharray="3 3" opacity=".6"/>
+              <circle cx="16" cy="3" r="2.5" fill="#b6f24a"/>
+            </svg>
+            <span>VINIS</span>
+          </a>
+          <p class="fdesc">Autonomous inspection of vast terrain — satellite data, sensor fusion and machine vision, delivered as a service.</p>
+        </div>
+        <div class="footer-col">
+          <h6>Platform</h6>
+          <a href="platform.html#architecture">Architecture</a>
+          <a href="platform.html#capabilities">Capabilities</a>
+          <a href="platform.html#twin">Digital twins</a>
+        </div>
+        <div class="footer-col">
+          <h6>Solutions</h6>
+          <a href="solutions.html">Services</a>
+          <a href="solutions.html#use-cases">Use cases</a>
+          <a href="index.html#contact">Request a demo</a>
+        </div>
+        <div class="footer-col">
+          <h6>Case studies</h6>
+          <a href="case-studies.html#cases">Case studies</a>
+          <a href="team.html#team">Team</a>
+          <a href="team.html#partner">Investment partner</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2026 VINIS · A Rorschach Innovation Services venture</span>
+        <span>DRIVING INNOVATION IN AFRICA</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+  <script>
+  /* ---- page animations: lens cycler + recovery sequence ---- */
+  (function () {
+    'use strict';
+    var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    /* --- Lens cycler --- */
+    var lens = document.getElementById('lens');
+    if (lens) {
+      var fig = lens.querySelector('.lens-fig');
+      var tabs = [].slice.call(document.querySelectorAll('#lensTabs .lens-tab'));
+      var qEl = document.getElementById('lensQ');
+      var subEl = document.getElementById('lensSub');
+      var LENS = [
+        { q: 'Is the grass healthy?', s: 'NDVI — green cover & biomass' },
+        { q: 'Is there enough moisture?', s: 'NDWI — water, irrigation & drought' },
+        { q: 'Where is it worn bare?', s: 'BSI — exposed soil, wear & thinning' },
+        { q: 'Where is it stressed?', s: 'NDRE — hidden stress, before it shows' }
+      ];
+      var li = 0, lensTimer = null;
+      function setLens(i) {
+        li = i;
+        fig.setAttribute('data-mode', i);
+        tabs.forEach(function (t, k) { t.classList.toggle('active', k === i); });
+        qEl.textContent = LENS[i].q;
+        subEl.textContent = LENS[i].s;
+      }
+      function lensNext() { setLens((li + 1) % 4); }
+      function startLens() { if (!reduce) { clearInterval(lensTimer); lensTimer = setInterval(lensNext, 2600); } }
+      tabs.forEach(function (t) {
+        t.addEventListener('click', function () { setLens(+t.getAttribute('data-i')); startLens(); });
+      });
+      setLens(0); startLens();
+    }
+
+    /* --- Recovery sequence --- */
+    var rec = document.getElementById('rec');
+    if (rec) {
+      var STEPS = [
+        { score: 78, color: 'var(--lime)', badge: 'LOW', badgeHigh: false,
+          load: [0, 0, 0, 0], name: 'Baseline',
+          cap: 'Baseline — the field is healthy and match-ready.' },
+        { score: 46, color: 'var(--amber)', badge: 'HIGH', badgeHigh: true,
+          load: [1240, 320, 145, 22], name: 'Heavy load',
+          cap: 'MediCoach scorecards show a heavy season — 1,240 balls bowled and hundreds of runs run. Load spikes, and the surface wears.' },
+        { score: 46, color: 'var(--amber)', badge: 'HIGH', badgeHigh: true,
+          load: [1240, 320, 145, 22], name: 'Job cards issued',
+          cap: 'VINIS pairs the load with satellite wear and auto-issues three maintenance job cards.' },
+        { score: 80, color: 'var(--lime)', badge: 'LOW', badgeHigh: false,
+          load: [1240, 320, 145, 22], name: 'Recovered',
+          cap: 'After rest, targeted irrigation and topsoil to the worn ends — Riverside Oval is back to healthy.' }
+      ];
+      var scoreEl = document.getElementById('recScore');
+      var meterEl = document.getElementById('recMeter');
+      var badgeEl = document.getElementById('recBadge');
+      var capEl = document.getElementById('recCap');
+      var nameEl = document.getElementById('recStepName');
+      var dots = [].slice.call(document.querySelectorAll('#recDots .rec-dot'));
+      var loadEls = ['ldBalls', 'ldSingles', 'ldTwos', 'ldThrees'].map(function (id) { return document.getElementById(id); });
+      var cur = 0, recTimer = null, countTimers = [];
+
+      function fmt(n) { return n >= 1000 ? n.toLocaleString('en-US') : String(n); }
+      function countTo(el, target) {
+        if (reduce || target === 0) { el.textContent = fmt(target); return; }
+        var start = null, dur = 900, from = 0;
+        function frame(t) {
+          if (start === null) start = t;
+          var p = Math.min((t - start) / dur, 1), eased = 1 - Math.pow(1 - p, 3);
+          el.textContent = fmt(Math.round(target * eased));
+          if (p < 1) countTimers.push(requestAnimationFrame(frame));
+        }
+        countTimers.push(requestAnimationFrame(frame));
+      }
+      function setStep(i) {
+        cur = i;
+        var s = STEPS[i];
+        countTimers.forEach(function (id) { cancelAnimationFrame(id); });
+        countTimers = [];
+        rec.setAttribute('data-step', i);
+        scoreEl.textContent = s.score;
+        scoreEl.style.color = s.color;
+        meterEl.style.width = s.score + '%';
+        meterEl.style.background = s.color;
+        badgeEl.textContent = s.badge;
+        badgeEl.classList.toggle('high', s.badgeHigh);
+        capEl.textContent = s.cap;
+        nameEl.textContent = s.name;
+        dots.forEach(function (d, k) { d.classList.toggle('active', k === i); });
+        loadEls.forEach(function (el, k) { countTo(el, s.load[k]); });
+      }
+      function next() { setStep((cur + 1) % 4); }
+      function startRec() { if (!reduce) { clearInterval(recTimer); recTimer = setInterval(next, 3000); } }
+
+      dots.forEach(function (d) {
+        d.addEventListener('click', function () { setStep(+d.getAttribute('data-s')); startRec(); });
+      });
+      document.getElementById('recReplay').addEventListener('click', function () { setStep(0); startRec(); });
+
+      // start when scrolled into view
+      var started = false;
+      var io = new IntersectionObserver(function (entries) {
+        entries.forEach(function (e) {
+          if (e.isIntersecting && !started) { started = true; setStep(0); startRec(); io.disconnect(); }
+        });
+      }, { threshold: 0.35 });
+      io.observe(rec);
+    }
+  })();
+  </script>
+</body>
+</html>

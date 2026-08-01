@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>VINIS — Autonomous Terrain Inspection from Orbit</title>
+  <meta name="description" content="VINIS (Vast Infrastructure Inspection Solution) is a cloud-native platform that continuously monitors large and complex geographies using satellite data, sensor fusion and machine vision — no boots on the ground. A Rorschach Innovation Services venture." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='6' fill='none' stroke='%233ad6e6' stroke-width='2'/%3E%3Ccircle cx='16' cy='16' r='13' fill='none' stroke='%233ad6e6' stroke-width='1' stroke-dasharray='3 3' opacity='.6'/%3E%3Ccircle cx='16' cy='3' r='2.5' fill='%23b6f24a'/%3E%3C/svg%3E" />
+</head>
+<body>
+
+  <!-- ============ NAV ============ -->
+  <nav class="nav" id="nav">
+    <div class="wrap nav-inner">
+      <a href="index.html" class="brand" aria-label="VINIS home">
+        <svg class="mark" viewBox="0 0 32 32" fill="none" aria-hidden="true">
+          <circle cx="16" cy="16" r="6" stroke="#3ad6e6" stroke-width="2"/>
+          <circle cx="16" cy="16" r="13" stroke="#3ad6e6" stroke-width="1" stroke-dasharray="3 3" opacity=".6"/>
+          <circle cx="16" cy="3" r="2.5" fill="#b6f24a"/>
+        </svg>
+        <span>VINIS<br><span class="sub">Vast Infrastructure Inspection</span></span>
+      </a>
+      <div class="nav-links" id="navLinks">
+        <a href="index.html" class="active">Home</a>
+        <a href="platform.html">Platform</a>
+        <a href="solutions.html">Solutions</a>
+        <a href="case-studies.html">Case Studies</a>
+        <a href="team.html">Team</a>
+        <a href="#contact" class="btn btn-primary">
+          Request a demo
+          <svg viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+      </div>
+      <button class="nav-toggle" id="navToggle" aria-label="Menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ============ HERO ============ -->
+  <header class="hero" id="top">
+    <div class="hero-bg"><div class="hero-scan"></div></div>
+    <div class="wrap hero-grid">
+      <div class="hero-copy">
+        <span class="hero-eyebrow"><span class="dot"></span>A Rorschach Innovation Services venture</span>
+        <h1 class="tagline">
+          <span class="line">A different <em>view</em></span>
+          <span class="line">for a different <em>perspective.</em></span>
+        </h1>
+        <p class="hero-lead">
+          VINIS is a cloud-native inspection platform that continuously monitors vast,
+          complex terrain — fusing satellite imagery, sensor feeds and machine vision to
+          watch your assets 24/7. No aircraft. No field teams. No boots on the ground.
+        </p>
+        <div class="hero-cta">
+          <a href="#contact" class="btn btn-primary">
+            Request a demo
+            <svg viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+          <a href="platform.html" class="btn btn-ghost">Explore the platform</a>
+        </div>
+        <div class="hero-meta">
+          <div>SATELLITE + SENSOR FUSION</div>
+          <div>MACHINE VISION</div>
+          <div>TERRAINS <span>50&nbsp;km²+</span></div>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <div class="orbit">
+          <div class="orbit-label tl">AOI · 50&nbsp;cm GSD</div>
+          <div class="orbit-ring"></div>
+          <div class="orbit-ring r2"></div>
+          <div class="orbit-ring r3"></div>
+          <div class="orbit-core"></div>
+          <div class="orbit-sat"><span class="sat"></span></div>
+          <div class="orbit-sat s2"><span class="sat"></span></div>
+          <div class="orbit-label br">−29.8587° S · 31.0218° E</div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ============ COST STRIP ============ -->
+  <section class="strip">
+    <div class="wrap">
+      <div class="strip-grid">
+        <div class="strip-item">
+          <div class="k"><span class="u">$</span><span data-count="37.5" data-dec="1">37.5</span></div>
+          <div class="l">Helicopter · cost per km²</div>
+        </div>
+        <div class="strip-item">
+          <div class="k"><span class="u">$</span><span data-count="30" data-dec="0">30</span></div>
+          <div class="l">Drone · cost per km²</div>
+        </div>
+        <div class="strip-item">
+          <div class="k hl"><span class="u">$</span><span data-count="8" data-dec="0">8</span></div>
+          <div class="l">VINIS satellite · cost per km²</div>
+        </div>
+        <div class="strip-item">
+          <div class="k">24<span class="u">/7</span></div>
+          <div class="l">Configurable revisit &amp; resolution</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ PROBLEM ============ -->
+  <section class="section-pad" id="problem">
+    <div class="wrap">
+      <div class="split">
+        <div class="reveal">
+          <span class="eyebrow"><span class="num">01</span> The problem</span>
+          <h2 style="font-family:var(--display);font-size:var(--t-2xl);font-weight:500;line-height:1.1;letter-spacing:-0.02em;margin-bottom:2rem;">
+            The cost of seeing everything, everywhere.
+          </h2>
+          <div class="problem-list">
+            <div class="problem-item">
+              <span class="pn">01</span>
+              <div>
+                <h4>Large terrains are hard to watch</h4>
+                <p>High-cost, high-risk inspections across 50&nbsp;km²+ of complex terrain can't be run frequently or reliably.</p>
+              </div>
+            </div>
+            <div class="problem-item">
+              <span class="pn">02</span>
+              <div>
+                <h4>Traditional methods don't scale</h4>
+                <p>Manual teams, vehicles, helicopters and drones are constrained by safety, regulation, environment and logistics — and in hostile or remote areas, simply aren't viable.</p>
+              </div>
+            </div>
+            <div class="problem-item">
+              <span class="pn">03</span>
+              <div>
+                <h4>Blind spots carry real cost</h4>
+                <p>Utilities, pipelines, borders and conservation need constant awareness. Failing to monitor means downtime, environmental damage and security breaches.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="reveal d1">
+          <div class="chart-card">
+            <div class="ct">Comparative inspection cost</div>
+            <div class="ch">Cost per km² by method</div>
+            <div class="bars" id="costBars">
+              <div class="bar-row">
+                <span class="bl">Helicopter</span>
+                <div class="bar-track"><div class="bar-fill" data-w="100">$37.50</div></div>
+              </div>
+              <div class="bar-row">
+                <span class="bl">Drone</span>
+                <div class="bar-track"><div class="bar-fill" data-w="80">$30.00</div></div>
+              </div>
+              <div class="bar-row win">
+                <span class="bl">Satellite</span>
+                <div class="bar-track"><div class="bar-fill" data-w="21">$8.00</div></div>
+              </div>
+            </div>
+            <div class="chart-foot">
+              VINIS delivers awareness at <b>~4.7× lower cost</b> than helicopter surveys —
+              with continuous, autonomous revisit.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ HOW IT WORKS ============ -->
+  <section class="section-pad" id="how" style="background:var(--bg-2);border-block:1px solid var(--border);">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="eyebrow"><span class="num">02</span> What is VINIS</span>
+        <h2>A cloud-native, end-to-end inspection platform — <em>no boots on the ground.</em></h2>
+        <p>VINIS continuously monitors large or complex geographies through three integrated stages, delivering insight wherever your team already works.</p>
+      </div>
+
+      <div class="steps">
+        <div class="step reveal">
+          <div class="sn">STAGE 01</div>
+          <svg class="icn" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2v4M12 18v4M2 12h4M18 12h4M5 5l3 3M16 16l3 3M19 5l-3 3M8 16l-3 3"/><circle cx="12" cy="12" r="3"/></svg>
+          <h3>Data fusion</h3>
+          <p>Ingests multispectral satellite imagery and fuses it with auxiliary sensor feeds into a single, standardised picture of your terrain.</p>
+        </div>
+        <div class="step reveal d1">
+          <div class="sn">STAGE 02</div>
+          <svg class="icn" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/></svg>
+          <h3>Machine vision</h3>
+          <p>Detects, classifies and characterises objects and their condition — against the asset or risk profile you define.</p>
+        </div>
+        <div class="step reveal d2">
+          <div class="sn">STAGE 03</div>
+          <svg class="icn" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 5h16v11H4z"/><path d="M4 9h16M8 20h8M12 16v4"/></svg>
+          <h3>Adaptive delivery</h3>
+          <p>Delivers insight through a customisable dashboard, standardised PDF / Excel reports, or real-time API integration into your systems.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ EXPLORE ============ -->
+  <section class="section-pad">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="eyebrow"><span class="num">03</span> Explore</span>
+        <h2>Go deeper.</h2>
+      </div>
+      <div class="explore">
+        <a href="platform.html" class="explore-card reveal">
+          <span class="xn">01 · PLATFORM</span>
+          <h3>The platform</h3>
+          <p>The intelligence pipeline — architecture, autonomous capabilities, and digital twins that simulate asset failure modes from IoT and satellite data.</p>
+          <span class="go">View platform <svg viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        </a>
+        <a href="solutions.html" class="explore-card reveal d1">
+          <span class="xn">02 · SOLUTIONS</span>
+          <h3>Solutions</h3>
+          <p>How you deploy VINIS — Inspection-as-a-Service, continuous monitoring and asset audits across every vast-terrain vertical.</p>
+          <span class="go">View solutions <svg viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        </a>
+        <a href="case-studies.html" class="explore-card reveal d2">
+          <span class="xn">03 · CASE STUDIES</span>
+          <h3>Case studies</h3>
+          <p>Where VINIS is already at work — field-health monitoring for cricket unions, tailings-dam safety with IoT, and landfill monitoring across South Africa.</p>
+          <span class="go">View case studies <svg viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CTA ============ -->
+  <section class="section-pad" id="contact">
+    <div class="wrap">
+      <div class="cta reveal">
+        <h2>Put your terrain under continuous watch.</h2>
+        <p>Tell us the geography and the assets that matter — we'll show you what VINIS sees.</p>
+        <div class="hero-cta">
+          <a href="mailto:info@rorschach.co.za?subject=VINIS%20demo%20request" class="btn btn-primary">
+            Request a demo
+            <svg viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+          <a href="mailto:info@rorschach.co.za" class="btn btn-ghost">info@rorschach.co.za</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="footer">
+    <div class="wrap">
+      <div class="footer-grid">
+        <div>
+          <a href="index.html" class="brand">
+            <svg class="mark" viewBox="0 0 32 32" fill="none" aria-hidden="true">
+              <circle cx="16" cy="16" r="6" stroke="#3ad6e6" stroke-width="2"/>
+              <circle cx="16" cy="16" r="13" stroke="#3ad6e6" stroke-width="1" stroke-dasharray="3 3" opacity=".6"/>
+              <circle cx="16" cy="3" r="2.5" fill="#b6f24a"/>
+            </svg>
+            <span>VINIS</span>
+          </a>
+          <p class="fdesc">Autonomous inspection of vast terrain — satellite data, sensor fusion and machine vision, delivered as a service.</p>
+        </div>
+        <div class="footer-col">
+          <h6>Platform</h6>
+          <a href="platform.html">Architecture</a>
+          <a href="platform.html#capabilities">Capabilities</a>
+          <a href="platform.html#twin">Digital twins</a>
+        </div>
+        <div class="footer-col">
+          <h6>Solutions</h6>
+          <a href="solutions.html">Services</a>
+          <a href="solutions.html#use-cases">Use cases</a>
+          <a href="#contact">Request a demo</a>
+        </div>
+        <div class="footer-col">
+          <h6>Case studies</h6>
+          <a href="case-studies.html#cases">Case studies</a>
+          <a href="team.html#team">Team</a>
+          <a href="team.html#partner">Investment partner</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2026 VINIS · A Rorschach Innovation Services venture</span>
+        <span>DRIVING INNOVATION IN AFRICA</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

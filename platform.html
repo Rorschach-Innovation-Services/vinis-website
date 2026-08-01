@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Platform — VINIS</title>
+  <meta name="description" content="The VINIS intelligence pipeline — from orbit to operations. Layered architecture, autonomous machine-vision capabilities, and digital twins that simulate asset failure modes from satellite and IoT data." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='6' fill='none' stroke='%233ad6e6' stroke-width='2'/%3E%3Ccircle cx='16' cy='16' r='13' fill='none' stroke='%233ad6e6' stroke-width='1' stroke-dasharray='3 3' opacity='.6'/%3E%3Ccircle cx='16' cy='3' r='2.5' fill='%23b6f24a'/%3E%3C/svg%3E" />
+</head>
+<body>
+
+  <!-- ============ NAV ============ -->
+  <nav class="nav" id="nav">
+    <div class="wrap nav-inner">
+      <a href="index.html" class="brand" aria-label="VINIS home">
+        <svg class="mark" viewBox="0 0 32 32" fill="none" aria-hidden="true">
+          <circle cx="16" cy="16" r="6" stroke="#3ad6e6" stroke-width="2"/>
+          <circle cx="16" cy="16" r="13" stroke="#3ad6e6" stroke-width="1" stroke-dasharray="3 3" opacity=".6"/>
+          <circle cx="16" cy="3" r="2.5" fill="#b6f24a"/>
+        </svg>
+        <span>VINIS<br><span class="sub">Vast Infrastructure Inspection</span></span>
+      </a>
+      <div class="nav-links" id="navLinks">
+        <a href="index.html">Home</a>
+        <a href="platform.html" class="active">Platform</a>
+        <a href="solutions.html">Solutions</a>
+        <a href="case-studies.html">Case Studies</a>
+        <a href="team.html">Team</a>
+        <a href="index.html#contact" class="btn btn-primary">
+          Request a demo
+          <svg viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+      </div>
+      <button class="nav-toggle" id="navToggle" aria-label="Menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ============ PAGE HEADER ============ -->
+  <header class="page-header" id="top">
+    <div class="wrap">
+      <span class="eyebrow reveal"><span class="num">Platform</span></span>
+      <h1 class="reveal">From orbit to operations — <em>one intelligence pipeline.</em></h1>
+      <p class="lead reveal d1">
+        VINIS turns raw observation into decisions. A layered, cloud-native architecture
+        captures the terrain, standardises it, reasons over it with machine vision, and
+        delivers the result to the people and systems that act on it — then models what
+        happens next.
+      </p>
+    </div>
+  </header>
+
+  <!-- ============ ARCHITECTURE ============ -->
+  <section class="section-pad" id="architecture">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="eyebrow"><span class="num">01</span> Architecture</span>
+        <h2>Four layers, <em>one system.</em></h2>
+        <p>Each layer scales independently — and cleanly into new sectors.</p>
+      </div>
+
+      <div class="stack">
+        <div class="layer reveal">
+          <div class="lhead">
+            <span class="lnum">LAYER 01</span>
+            <span class="lname"><span class="accent">Observational</span></span>
+          </div>
+          <div>
+            <p class="ldesc">Where the data is captured — from space and the ground.</p>
+            <div class="chips">
+              <span class="chip">Satellites</span>
+              <span class="chip">IoT sensors</span>
+              <span class="chip">Autonomous platforms / UAV</span>
+              <span class="chip">External condition feeds</span>
+            </div>
+          </div>
+        </div>
+        <div class="layer reveal d1">
+          <div class="lhead">
+            <span class="lnum">LAYER 02</span>
+            <span class="lname"><span class="accent">Processing</span></span>
+          </div>
+          <div>
+            <p class="ldesc">Automated ingest, preprocessing and standardisation of every feed.</p>
+            <div class="chips">
+              <span class="chip">Imagery ingest &amp; preprocessing</span>
+              <span class="chip">Standardisation</span>
+              <span class="chip">Image training</span>
+              <span class="chip">Cloud-native microservices</span>
+            </div>
+          </div>
+        </div>
+        <div class="layer reveal d2">
+          <div class="lhead">
+            <span class="lnum">LAYER 03</span>
+            <span class="lname"><span class="accent">Intelligence</span></span>
+          </div>
+          <div>
+            <p class="ldesc">Machine-vision models detect anomalies and assess asset condition.</p>
+            <div class="chips">
+              <span class="chip">Anomaly detection</span>
+              <span class="chip">Object detection &amp; classification</span>
+              <span class="chip">Condition assessment</span>
+              <span class="chip">System of record</span>
+            </div>
+          </div>
+        </div>
+        <div class="layer reveal d3">
+          <div class="lhead">
+            <span class="lnum">LAYER 04</span>
+            <span class="lname"><span class="accent">Operational</span></span>
+          </div>
+          <div>
+            <p class="ldesc">Insight delivered to the people and systems that act on it.</p>
+            <div class="chips">
+              <span class="chip">Dashboards</span>
+              <span class="chip">Reports</span>
+              <span class="chip">API</span>
+              <span class="chip">Asset owners &amp; operators</span>
+              <span class="chip">Financial services</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CAPABILITIES ============ -->
+  <section class="section-pad" id="capabilities" style="background:var(--bg-2);border-block:1px solid var(--border);">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="eyebrow"><span class="num">02</span> Capabilities</span>
+        <h2>Built to run itself.</h2>
+      </div>
+      <div class="feat-grid">
+        <div class="feat reveal">
+          <svg class="icn" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+          <h4>Fully autonomous</h4>
+          <p>24/7 area surveillance with configurable revisit frequency and resolution — tuned to match your budget.</p>
+        </div>
+        <div class="feat reveal d1">
+          <svg class="icn" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 3l8 4v5c0 5-3.5 8-8 9-4.5-1-8-4-8-9V7l8-4Z"/><path d="M9 12l2 2 4-4"/></svg>
+          <h4>Client-driven classification</h4>
+          <p>You define what "anomaly", "risk" or "asset health" means for your operation — the models adapt to your profile.</p>
+        </div>
+        <div class="feat reveal d2">
+          <svg class="icn" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 15a4 4 0 010-8 5 5 0 019.6-1.5A4.5 4.5 0 0119 15H4Z"/><path d="M12 12v6M9 15l3 3 3-3"/></svg>
+          <h4>Flexible deployment</h4>
+          <p>Cloud-hosted SaaS — no on-premise hardware, virtually zero change to your operations or skill sets.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ DIGITAL TWINS ============ -->
+  <section class="section-pad" id="twin">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="eyebrow"><span class="num">03</span> Digital twins &amp; simulation</span>
+        <h2 style="max-width:22ch;">Model failure <em style="font-style:normal;color:var(--lime);">before</em> it happens.</h2>
+      </div>
+
+      <div class="twin">
+        <div class="twin-copy reveal">
+          <h2>A living twin of every asset.</h2>
+          <p>
+            VINIS fuses satellite observation with live IoT telemetry to build a continuously
+            updated digital twin of each monitored asset — then simulates its failure modes to
+            predict where and when it will fail.
+          </p>
+          <div class="twin-points">
+            <div class="twin-point">
+              <svg class="tp-icn" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 2l8 4v6c0 5-4 8-8 10-4-2-8-5-8-10V6l8-4Z"/><circle cx="12" cy="11" r="2.5"/></svg>
+              <div>
+                <h4>Sensor + satellite fusion</h4>
+                <p>Strain, temperature, vibration, tilt and load from IoT sensors are merged with overhead imagery into one virtual model of the real asset.</p>
+              </div>
+            </div>
+            <div class="twin-point">
+              <svg class="tp-icn" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 3v18h18"/><path d="M7 15l4-5 3 3 5-7"/></svg>
+              <div>
+                <h4>Failure-mode simulation</h4>
+                <p>Simulate structural fatigue, corrosion, thermal stress and vegetation encroachment against real conditions to find the mode most likely to fail first.</p>
+              </div>
+            </div>
+            <div class="twin-point">
+              <svg class="tp-icn" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 8v5M12 16v.5"/><path d="M10.3 3.3L2 18a2 2 0 001.7 3h16.6A2 2 0 0022 18L13.7 3.3a2 2 0 00-3.4 0Z"/></svg>
+              <div>
+                <h4>Predict, then prevent</h4>
+                <p>Remaining-useful-life estimates and early warnings drive predictive maintenance — you intervene before an outage, not after.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="twin-visual reveal d1">
+          <svg viewBox="0 0 480 340" role="img" aria-label="Digital twin data flow: satellite and IoT telemetry feed a digital twin that runs failure-mode simulation">
+            <!-- connectors -->
+            <path class="tw-flow" d="M124 78 C 180 96, 176 150, 214 164" stroke="#3ad6e6" stroke-width="1.5" fill="none"/>
+            <path class="tw-flow" d="M124 262 C 180 244, 176 190, 214 176" stroke="#3ad6e6" stroke-width="1.5" fill="none"/>
+            <path class="tw-flow" d="M300 170 H 362" stroke="#b6f24a" stroke-width="1.5" fill="none"/>
+
+            <!-- satellite node -->
+            <g>
+              <rect x="26" y="44" width="98" height="68" rx="12" fill="#0c1120" stroke="rgba(255,255,255,0.12)"/>
+              <g transform="translate(56,64)" stroke="#3ad6e6" stroke-width="1.6" fill="none">
+                <rect x="10" y="10" width="16" height="10" rx="2"/>
+                <path d="M2 8l8 4M2 22l8-4M34 8l-8 4M34 22l-8-4"/>
+                <path d="M18 20v6M14 26h8" stroke-linecap="round"/>
+              </g>
+              <text class="tw-node-label" x="75" y="128" text-anchor="middle">Satellite</text>
+            </g>
+
+            <!-- IoT node -->
+            <g>
+              <rect x="26" y="228" width="98" height="68" rx="12" fill="#0c1120" stroke="rgba(255,255,255,0.12)"/>
+              <g transform="translate(60,246)" stroke="#3ad6e6" stroke-width="1.6" fill="none">
+                <circle cx="15" cy="17" r="3.5"/>
+                <path d="M8 10a10 10 0 0114 0M4 5a17 17 0 0122 0" stroke-linecap="round"/>
+              </g>
+              <text class="tw-node-label" x="75" y="312" text-anchor="middle">IoT telemetry</text>
+            </g>
+
+            <!-- digital twin core (hexagon) -->
+            <g>
+              <path d="M257 120 L293 141 L293 199 L257 220 L221 199 L221 141 Z"
+                    fill="rgba(182,242,74,0.06)" stroke="#b6f24a" stroke-width="1.5"/>
+              <path d="M257 132 L283 147 L283 193 L257 208 L231 193 L231 147 Z"
+                    fill="none" stroke="rgba(58,214,230,0.5)" stroke-width="1"/>
+              <text class="tw-core-label" x="257" y="167" text-anchor="middle">Digital</text>
+              <text class="tw-core-label" x="257" y="184" text-anchor="middle">twin</text>
+            </g>
+
+            <!-- failure sim node -->
+            <g>
+              <rect x="362" y="136" width="92" height="68" rx="12" fill="#0c1120" stroke="rgba(182,242,74,0.35)"/>
+              <g transform="translate(396,150)" stroke="#b6f24a" stroke-width="1.6" fill="none">
+                <path d="M12 3L2 21h20L12 3Z"/>
+                <path d="M12 10v5M12 18v.4" stroke-linecap="round"/>
+              </g>
+              <text class="tw-node-label" x="408" y="220" text-anchor="middle" style="fill:#b6f24a">Failure sim</text>
+            </g>
+          </svg>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CTA ============ -->
+  <section class="section-pad" id="contact" style="background:var(--bg-2);border-top:1px solid var(--border);">
+    <div class="wrap">
+      <div class="cta reveal">
+        <h2>See the platform on your terrain.</h2>
+        <p>Tell us the geography and the assets that matter — we'll show you what VINIS sees.</p>
+        <div class="hero-cta">
+          <a href="mailto:info@rorschach.co.za?subject=VINIS%20demo%20request" class="btn btn-primary">
+            Request a demo
+            <svg viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+          <a href="solutions.html" class="btn btn-ghost">Explore solutions</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="footer">
+    <div class="wrap">
+      <div class="footer-grid">
+        <div>
+          <a href="index.html" class="brand">
+            <svg class="mark" viewBox="0 0 32 32" fill="none" aria-hidden="true">
+              <circle cx="16" cy="16" r="6" stroke="#3ad6e6" stroke-width="2"/>
+              <circle cx="16" cy="16" r="13" stroke="#3ad6e6" stroke-width="1" stroke-dasharray="3 3" opacity=".6"/>
+              <circle cx="16" cy="3" r="2.5" fill="#b6f24a"/>
+            </svg>
+            <span>VINIS</span>
+          </a>
+          <p class="fdesc">Autonomous inspection of vast terrain — satellite data, sensor fusion and machine vision, delivered as a service.</p>
+        </div>
+        <div class="footer-col">
+          <h6>Platform</h6>
+          <a href="platform.html#architecture">Architecture</a>
+          <a href="platform.html#capabilities">Capabilities</a>
+          <a href="platform.html#twin">Digital twins</a>
+        </div>
+        <div class="footer-col">
+          <h6>Solutions</h6>
+          <a href="solutions.html">Services</a>
+          <a href="solutions.html#use-cases">Use cases</a>
+          <a href="index.html#contact">Request a demo</a>
+        </div>
+        <div class="footer-col">
+          <h6>Case studies</h6>
+          <a href="case-studies.html#cases">Case studies</a>
+          <a href="team.html#team">Team</a>
+          <a href="team.html#partner">Investment partner</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2026 VINIS · A Rorschach Innovation Services venture</span>
+        <span>DRIVING INNOVATION IN AFRICA</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
