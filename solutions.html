@@ -39,15 +39,60 @@
     </div>
   </nav>
 
-  <!-- ============ PAGE HEADER ============ -->
-  <header class="page-header" id="top">
-    <div class="wrap">
-      <span class="eyebrow reveal"><span class="num">Solutions</span></span>
-      <h1 class="reveal">Monitoring, <em>delivered as a service.</em></h1>
-      <p class="lead reveal d1">
-        VINIS deploys as a service — no CapEx, no hardware, minimal change to your operations.
-        Choose continuous eyes on your terrain, scheduled asset audits, or both.
-      </p>
+  <!-- ============ PAGE HEADER (HERO) ============ -->
+  <header class="page-header page-header--hero" id="top">
+    <div class="wrap ph-grid">
+      <div class="ph-copy">
+        <span class="eyebrow reveal"><span class="num">Solutions</span></span>
+        <h1 class="reveal">Monitoring, <em>delivered as a service.</em></h1>
+        <p class="lead reveal d1">
+          VINIS deploys as a service — no CapEx, no hardware, minimal change to your operations.
+          Every step runs on AI: inspection, analysis, decision-making and reporting, in one
+          continuous pipeline.
+        </p>
+      </div>
+
+      <div class="ph-visual reveal d1">
+        <div class="sol-flow" id="solFlow" data-step="0">
+          <div class="sol-head">
+            <span class="sol-badge"><span class="sol-badge-dot"></span>AI PIPELINE</span>
+            <span class="sol-loop">CONTINUOUS</span>
+          </div>
+          <div class="sol-steps">
+            <div class="sol-track"><span class="sol-fill"></span></div>
+            <div class="sol-list">
+              <div class="sol-step">
+                <span class="sol-ico">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/></svg>
+                </span>
+                <div class="sol-txt"><h4>Inspection</h4><p>AI vision · capture</p></div>
+                <span class="sol-n">01</span>
+              </div>
+              <div class="sol-step">
+                <span class="sol-ico">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M3 12h3l2-6 3.5 12L17 8l1.5 4H21" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </span>
+                <div class="sol-txt"><h4>Analysis</h4><p>AI models &amp; indices</p></div>
+                <span class="sol-n">02</span>
+              </div>
+              <div class="sol-step">
+                <span class="sol-ico">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="6" cy="6" r="2.2"/><circle cx="6" cy="18" r="2.2"/><circle cx="18" cy="12" r="2.2"/><path d="M8.2 6H11a4 4 0 014 4M8.2 18H11a4 4 0 004-4" stroke-linecap="round"/></svg>
+                </span>
+                <div class="sol-txt"><h4>Decision-making</h4><p>AI risk &amp; priority</p></div>
+                <span class="sol-n">03</span>
+              </div>
+              <div class="sol-step">
+                <span class="sol-ico">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M14 3H7a2 2 0 00-2 2v14a2 2 0 002 2h10a2 2 0 002-2V8z"/><path d="M14 3v5h5M9 13h6M9 17h5" stroke-linecap="round"/></svg>
+                </span>
+                <div class="sol-txt"><h4>Reporting</h4><p>AI-generated</p></div>
+                <span class="sol-n">04</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </header>
 
@@ -199,5 +244,17 @@
   </footer>
 
   <script src="script.js"></script>
+  <script>
+  /* ---- Solutions hero: cycle the AI pipeline (inspection → analysis → decision → reporting) ---- */
+  (function () {
+    var flow = document.getElementById('solFlow');
+    if (!flow) return;
+    var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    var i = 0;
+    function set(n) { i = n; flow.setAttribute('data-step', i); }
+    set(0);
+    if (!reduce) setInterval(function () { set((i + 1) % 4); }, 1900);
+  })();
+  </script>
 </body>
 </html>

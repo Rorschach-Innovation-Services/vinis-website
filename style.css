@@ -1389,6 +1389,47 @@ section { position: relative; z-index: 1; }
   .ph-scene { max-width: 340px; }
 }
 
+/* ---------- Solutions hero: AI process pipeline ---------- */
+.sol-flow {
+  width: 100%; max-width: 400px; margin-inline: auto;
+  border: 1px solid var(--border); border-radius: var(--radius-lg);
+  background: radial-gradient(ellipse 100% 55% at 50% 0%, rgba(58,214,230,0.09), transparent 60%), var(--bg-card);
+  padding: clamp(1.3rem, 3vw, 1.9rem);
+}
+.sol-head { display: flex; align-items: center; justify-content: space-between; margin-bottom: 1.4rem; }
+.sol-badge { display: inline-flex; align-items: center; gap: 0.5rem; font-family: var(--mono); font-size: var(--t-xs); letter-spacing: 0.14em; color: var(--cyan); }
+.sol-badge-dot { width: 7px; height: 7px; border-radius: 50%; background: var(--lime); box-shadow: 0 0 8px var(--lime); animation: pulse 1.8s ease-in-out infinite; }
+.sol-loop { font-family: var(--mono); font-size: var(--t-xs); letter-spacing: 0.12em; color: var(--text-3); }
+.sol-steps { position: relative; }
+.sol-track { position: absolute; left: 21px; top: 22px; bottom: 22px; width: 2px; background: var(--border-2); border-radius: 2px; overflow: hidden; }
+.sol-fill { position: absolute; left: 0; top: 0; width: 100%; height: 6%; border-radius: 2px;
+  background: linear-gradient(180deg, var(--cyan), var(--cyan-2)); box-shadow: 0 0 8px var(--cyan);
+  transition: height 0.6s cubic-bezier(.22,1,.36,1); }
+.sol-list { display: flex; flex-direction: column; gap: 0.9rem; position: relative; }
+.sol-step { display: grid; grid-template-columns: 44px 1fr auto; align-items: center; gap: 0.9rem; opacity: 0.42; transition: opacity 0.5s; }
+.sol-ico { width: 44px; height: 44px; border-radius: 50%; display: grid; place-items: center; background: var(--bg-card); border: 1px solid var(--border-2); color: var(--text-2); transition: var(--ease); position: relative; z-index: 1; }
+.sol-ico svg { width: 22px; height: 22px; }
+.sol-txt h4 { font-size: var(--t-base); font-weight: 600; }
+.sol-txt p { font-family: var(--mono); font-size: var(--t-xs); letter-spacing: 0.04em; color: var(--text-3); text-transform: uppercase; margin-top: 0.15rem; }
+.sol-n { font-family: var(--mono); font-size: var(--t-xs); color: var(--text-4); transition: color var(--ease); }
+/* active step */
+.sol-flow[data-step="0"] .sol-step:nth-child(1),
+.sol-flow[data-step="1"] .sol-step:nth-child(2),
+.sol-flow[data-step="2"] .sol-step:nth-child(3),
+.sol-flow[data-step="3"] .sol-step:nth-child(4) { opacity: 1; }
+.sol-flow[data-step="0"] .sol-step:nth-child(1) .sol-ico,
+.sol-flow[data-step="1"] .sol-step:nth-child(2) .sol-ico,
+.sol-flow[data-step="2"] .sol-step:nth-child(3) .sol-ico,
+.sol-flow[data-step="3"] .sol-step:nth-child(4) .sol-ico { border-color: var(--cyan); background: var(--cyan-dim); color: var(--lime); box-shadow: 0 0 18px -3px var(--cyan-bdr); }
+.sol-flow[data-step="0"] .sol-step:nth-child(1) .sol-n,
+.sol-flow[data-step="1"] .sol-step:nth-child(2) .sol-n,
+.sol-flow[data-step="2"] .sol-step:nth-child(3) .sol-n,
+.sol-flow[data-step="3"] .sol-step:nth-child(4) .sol-n { color: var(--cyan); }
+/* pipeline fill per step */
+.sol-flow[data-step="1"] .sol-fill { height: 38%; }
+.sol-flow[data-step="2"] .sol-fill { height: 70%; }
+.sol-flow[data-step="3"] .sol-fill { height: 100%; }
+
 /* ---------- Brand mark image ---------- */
 .brand .mark { object-fit: contain; }
 
