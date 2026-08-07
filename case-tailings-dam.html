@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tailings-Dam Monitoring — VINIS Case Study</title>
+  <meta name="description" content="How VINIS combines satellite, drone, sensors, manual inspection and AI to keep South African tailings storage facilities compliant and safe — replacing scarce, subjective, infrequent inspection with a standardised, higher-frequency evidence base and automated GISTM reporting." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" type="image/png" href="assets/vinis-mark.png" />
+</head>
+<body>
+
+  <!-- ============ NAV ============ -->
+  <nav class="nav" id="nav">
+    <div class="wrap nav-inner">
+      <a href="index.html" class="brand" aria-label="VINIS home">
+        <img class="mark" src="assets/vinis-mark.png" alt="" width="30" height="30" />
+        <span class="wordmark">VINIS</span>
+        <span class="sub">Vast Infrastructure Inspection</span>
+      </a>
+      <div class="nav-links" id="navLinks">
+        <a href="index.html">Home</a>
+        <a href="platform.html">Platform</a>
+        <a href="solutions.html">Solutions</a>
+        <a href="case-studies.html" class="active">Case Studies</a>
+        <a href="team.html">Team</a>
+        <a href="index.html#contact" class="btn btn-primary">
+          Request a demo
+          <svg viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+      </div>
+      <button class="nav-toggle" id="navToggle" aria-label="Menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ============ PAGE HEADER ============ -->
+  <header class="page-header" id="top">
+    <div class="wrap">
+      <a href="case-studies.html#cases" class="back-link reveal">
+        <svg viewBox="0 0 16 16" fill="none" width="14" height="14"><path d="M13 8H3M7 4L3 8l4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        Case study 02 · Tailings safety
+      </a>
+      <h1 class="reveal">Watching a tailings dam — <em>every way at once.</em></h1>
+      <p class="lead reveal d1">
+        Tailings storage facilities are among the highest-consequence structures in mining — yet
+        the person responsible day-to-day is usually a SHEQ manager, not a geotechnical engineer.
+        VINIS combines satellite, drone, sensors, manual inspection and AI to make monitoring
+        happen on schedule, capture defensible evidence, and keep the facility compliant and safe.
+      </p>
+      <div class="union-chips reveal d2">
+        <span class="union-chip"><span class="dot"></span>Satellite</span>
+        <span class="union-chip"><span class="dot"></span>Drone</span>
+        <span class="union-chip"><span class="dot"></span>Sensors</span>
+        <span class="union-chip"><span class="dot"></span>Manual inspection</span>
+        <span class="union-chip"><span class="dot"></span>AI</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- ============ STAT BAND ============ -->
+  <section class="strip">
+    <div class="wrap">
+      <div class="strip-grid">
+        <div class="strip-item">
+          <div class="k hl"><span data-count="5" data-dec="0">5</span></div>
+          <div class="l">Monitoring streams, fused</div>
+        </div>
+        <div class="strip-item">
+          <div class="k">~5<span class="u">day</span></div>
+          <div class="l">Satellite revisit (Sentinel-2)</div>
+        </div>
+        <div class="strip-item">
+          <div class="k">cm<span class="u">-level</span></div>
+          <div class="l">Drone survey resolution</div>
+        </div>
+        <div class="strip-item">
+          <div class="k">1</div>
+          <div class="l">Append-only evidence ledger</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CHALLENGE ============ -->
+  <section class="section-pad" id="challenge">
+    <div class="wrap">
+      <div class="split">
+        <div class="reveal">
+          <span class="eyebrow"><span class="num">01</span> The challenge</span>
+          <h2 style="font-family:var(--display);font-size:var(--t-2xl);font-weight:500;line-height:1.1;letter-spacing:-0.02em;margin-bottom:1.6rem;">
+            Well-monitored dams still fail — for human reasons.
+          </h2>
+          <p style="color:var(--text-2);font-size:var(--t-base);">
+            When a monitored tailings dam fails, the causes are usually organisational, not
+            technical: risks that never reach the people who can act, concerns overridden by
+            cost, monitoring not aligned to how the dam actually fails, and thin specialist
+            capacity. The tools exist — operationalising them against a compliance obligation
+            is the gap.
+          </p>
+        </div>
+        <div class="reveal d1">
+          <div class="problem-list">
+            <div class="problem-item">
+              <span class="pn">01</span>
+              <div><h4>Too few qualified inspectors</h4><p>Geotechnical specialists are scarce and expensive. Routine oversight falls to SHEQ managers who aren't engineers — and can't be everywhere.</p></div>
+            </div>
+            <div class="problem-item">
+              <span class="pn">02</span>
+              <div><h4>Manual inspection is subjective</h4><p>Two inspectors rarely grade the same wall the same way, and paper records can be edited after the fact — so the evidence isn't defensible.</p></div>
+            </div>
+            <div class="problem-item">
+              <span class="pn">03</span>
+              <div><h4>Infrequent, inconsistent</h4><p>Periodic audits leave long blind windows. Overtopping — the single biggest cause of failure — can develop between them.</p></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FIVE STREAMS ============ -->
+  <section class="section-pad" id="streams" style="background:var(--bg-2);border-block:1px solid var(--border);">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="eyebrow"><span class="num">02</span> The approach</span>
+        <h2>One dam, <em>five streams.</em></h2>
+        <p>No single method sees everything. VINIS fuses five independent ways of watching the dam — each covering what the others miss — into one calibrated, cross-validated evidence base.</p>
+      </div>
+
+      <div class="twin">
+        <div class="twin-copy reveal">
+          <div class="twin-points">
+            <div class="twin-point">
+              <svg class="tp-icn" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="7" y="9" width="10" height="6" rx="1"/><path d="M3 6l4 3M3 18l4-3M21 6l-4 3M21 18l-4-3M12 15v4M9 19h6"/></svg>
+              <div>
+                <h4>Satellite</h4>
+                <p>Sentinel-2 every ~5 days measures pond area, beach width and freeboard — and flags undeclared wall raises and rising overtopping risk from orbit.</p>
+              </div>
+            </div>
+            <div class="twin-point">
+              <svg class="tp-icn" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="5" cy="7" r="2"/><circle cx="19" cy="7" r="2"/><circle cx="5" cy="17" r="2"/><circle cx="19" cy="17" r="2"/><path d="M7 7h10M7 17h10M12 9v6M9 12h6"/></svg>
+              <div>
+                <h4>Drone</h4>
+                <p>Cm-level photogrammetry — orthomosaics and DEMs — closes the gap between 10&nbsp;m pixels and the ground: beach distance, erosion, crest and wall survey, without walking the deposit.</p>
+              </div>
+            </div>
+            <div class="twin-point">
+              <svg class="tp-icn" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 12a8 8 0 0116 0M7.5 12a4.5 4.5 0 019 0"/><circle cx="12" cy="12" r="1.5"/><path d="M12 13.5V21"/></svg>
+              <div>
+                <h4>Sensors</h4>
+                <p>Continuous ground-instrument telemetry — pore pressure, movement, seepage — as a live time-series, positioned on the facility record.</p>
+              </div>
+            </div>
+            <div class="twin-point">
+              <svg class="tp-icn" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M9 4h6a2 2 0 012 2v13a2 2 0 01-2 2H9a2 2 0 01-2-2V6a2 2 0 012-2Z"/><path d="M10 4V3h4v1M9.5 12l1.5 1.5 3.5-3.5"/></svg>
+              <div>
+                <h4>Manual inspection</h4>
+                <p>Structured, geotagged, time-stamped rounds on the inspector's own phone — progressive forms keyed to the standard checklist, with a tamper-proof chain of custody.</p>
+              </div>
+            </div>
+            <div class="twin-point">
+              <svg class="tp-icn" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="5" y="5" width="14" height="14" rx="3"/><path d="M9 9h.01M15 9h.01M9 14c1 1 5 1 6 0"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3"/></svg>
+              <div>
+                <h4>AI</h4>
+                <p>Machine-vision screening and cross-validation — one stream's finding checked against the others (a drone DEM confirming the satellite pond edge), with an uncertainty band on every number.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="twin-visual reveal d1">
+          <svg viewBox="0 0 480 360" role="img" aria-label="Four monitoring streams feed an AI + evidence-ledger core, which produces compliance reports and safety alerts">
+            <defs><filter id="softt" x="-30%" y="-30%" width="160%" height="160%"><feGaussianBlur stdDeviation="8"/></filter></defs>
+            <!-- connectors: 4 inputs -> core -->
+            <path class="tw-flow" d="M126 52 C 180 70, 190 150, 214 172" stroke="#3ad6e6" stroke-width="1.5" fill="none"/>
+            <path class="tw-flow" d="M126 138 C 180 150, 188 165, 214 176" stroke="#3ad6e6" stroke-width="1.5" fill="none"/>
+            <path class="tw-flow" d="M126 224 C 180 210, 188 195, 214 184" stroke="#3ad6e6" stroke-width="1.5" fill="none"/>
+            <path class="tw-flow" d="M126 310 C 180 290, 190 210, 214 188" stroke="#3ad6e6" stroke-width="1.5" fill="none"/>
+            <!-- core -> output -->
+            <path class="tw-flow" d="M300 180 H 356" stroke="#b6f24a" stroke-width="1.5" fill="none"/>
+
+            <!-- input chips -->
+            <g>
+              <rect x="24" y="26" width="102" height="52" rx="11" fill="#0c1120" stroke="rgba(255,255,255,0.12)"/>
+              <g transform="translate(40,40)" stroke="#3ad6e6" stroke-width="1.5" fill="none"><rect x="6" y="6" width="12" height="8" rx="1.5"/><path d="M0 5l6 3M0 15l6-3M24 5l-6 3M24 15l-6-3"/></g>
+              <text class="tw-node-label" x="86" y="58" text-anchor="middle">Satellite</text>
+            </g>
+            <g>
+              <rect x="24" y="112" width="102" height="52" rx="11" fill="#0c1120" stroke="rgba(255,255,255,0.12)"/>
+              <g transform="translate(44,124)" stroke="#3ad6e6" stroke-width="1.5" fill="none"><circle cx="2" cy="3" r="2"/><circle cx="18" cy="3" r="2"/><circle cx="2" cy="17" r="2"/><circle cx="18" cy="17" r="2"/><path d="M4 5l5 5M16 5l-5 5M4 15l5-5M16 15l-5-5"/></g>
+              <text class="tw-node-label" x="86" y="144" text-anchor="middle">Drone</text>
+            </g>
+            <g>
+              <rect x="24" y="198" width="102" height="52" rx="11" fill="#0c1120" stroke="rgba(255,255,255,0.12)"/>
+              <g transform="translate(46,210)" stroke="#3ad6e6" stroke-width="1.5" fill="none"><path d="M0 10a10 10 0 0120 0M4 10a6 6 0 0112 0"/><circle cx="10" cy="10" r="1.5" fill="#3ad6e6"/></g>
+              <text class="tw-node-label" x="86" y="230" text-anchor="middle">Sensors</text>
+            </g>
+            <g>
+              <rect x="24" y="284" width="102" height="52" rx="11" fill="#0c1120" stroke="rgba(255,255,255,0.12)"/>
+              <g transform="translate(48,296)" stroke="#3ad6e6" stroke-width="1.5" fill="none"><rect x="1" y="0" width="14" height="18" rx="2"/><path d="M4 6h8M4 10h8M4 14h5"/></g>
+              <text class="tw-node-label" x="86" y="316" text-anchor="middle">Inspection</text>
+            </g>
+
+            <!-- core hexagon: AI + ledger -->
+            <path d="M257 128 L297 152 L297 208 L257 232 L217 208 L217 152 Z" fill="rgba(58,214,230,0.06)" stroke="#3ad6e6" stroke-width="1.5"/>
+            <path d="M257 142 L286 158 L286 202 L257 218 L228 202 L228 158 Z" fill="none" stroke="rgba(182,242,74,0.5)" stroke-width="1"/>
+            <text class="tw-core-label" x="257" y="176" text-anchor="middle">AI +</text>
+            <text class="tw-core-label" x="257" y="193" text-anchor="middle">ledger</text>
+
+            <!-- output chip: compliance & alerts -->
+            <g>
+              <rect x="356" y="150" width="98" height="60" rx="12" fill="#0c1120" stroke="rgba(182,242,74,0.35)"/>
+              <g transform="translate(390,164)" stroke="#b6f24a" stroke-width="1.6" fill="none"><path d="M8 1l7 3v5c0 4-3 6-7 8-4-2-7-4-7-8V4l7-3Z"/><path d="M5 8l2 2 4-4"/></g>
+              <text class="tw-node-label" x="405" y="200" text-anchor="middle" style="fill:#b6f24a">Compliance</text>
+            </g>
+          </svg>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ WHAT IT CHANGES ============ -->
+  <section class="section-pad" id="changes">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="eyebrow"><span class="num">03</span> What it changes</span>
+        <h2>Compliance you can defend — and safety you can trust.</h2>
+      </div>
+      <div class="feat-grid">
+        <div class="feat reveal">
+          <svg class="icn" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M16 21v-2a4 4 0 00-4-4H6a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg>
+          <h4>Beyond the inspector shortage</h4>
+          <p>The routine runs without a geotechnical engineer on site — remote streams do the watching, and specialists are pulled in by exception, escalated in one tap to the named Engineer of Record.</p>
+        </div>
+        <div class="feat reveal d1">
+          <svg class="icn" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 4h6a2 2 0 012 2v13a2 2 0 01-2 2H9a2 2 0 01-2-2V6a2 2 0 012-2Z"/><path d="M9.5 11l1.5 1.5L14 9.5"/></svg>
+          <h4>Objective, not subjective</h4>
+          <p>Every observation is a standardised, structured record against the same checklist and site-calibrated thresholds — with an uncertainty band. No more two-inspectors-two-answers.</p>
+        </div>
+        <div class="feat reveal d2">
+          <svg class="icn" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 8v4l3 2"/><circle cx="12" cy="12" r="9"/></svg>
+          <h4>Higher frequency</h4>
+          <p>Satellite every ~5 days, scheduled drone flights, continuous sensors and prompted inspection rounds replace the occasional audit — the blind windows close.</p>
+        </div>
+        <div class="feat reveal">
+          <svg class="icn" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 5h16M4 12h16M4 19h10"/></svg>
+          <h4>Consistent, reportable data</h4>
+          <p>One standardised evidence base means the numbers that go into a report are derived the same way every time, at every site — comparable and audit-ready.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ COMPLIANCE & EVIDENCE ============ -->
+  <section class="section-pad" id="compliance" style="background:var(--bg-2);border-block:1px solid var(--border);">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="eyebrow"><span class="num">04</span> Compliance &amp; evidence</span>
+        <h2>The audit trail <em>writes the report.</em></h2>
+        <p>Every observation, alert and acknowledgement is an immutable, hash-chained event. Compliance reports are generated from that ledger — reproducible and tamper-evident by construction.</p>
+      </div>
+
+      <div class="model-banner reveal">
+        <div class="mb">
+          <h5><svg class="icn" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 3l8 4v5c0 5-4 8-8 10-4-2-8-5-8-10V7l8-4Z"/><path d="M9 12l2 2 4-4"/></svg> Append-only evidence</h5>
+          <p>Nothing can be edited or deleted after the fact — the record is defensible under audit.</p>
+        </div>
+        <div class="mb">
+          <h5><svg class="icn" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M5 4h11l3 3v13H5z"/><path d="M9 13h6M9 16h6M9 10h3"/></svg> Automated reports</h5>
+          <p>Daily brief to quarterly GISTM disclosure packs, assembled from the ledger — never hand-compiled.</p>
+        </div>
+        <div class="mb">
+          <h5><svg class="icn" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 3v18h18"/><path d="M7 14l3-3 3 2 5-6"/></svg> Live conformance scorecard</h5>
+          <p>Mapped topic-by-topic to exactly what the platform can evidence, so gaps are visible.</p>
+        </div>
+      </div>
+
+      <div class="reveal" style="margin-top:2.4rem;">
+        <p class="eyebrow" style="margin-bottom:1.1rem;"><span class="num">Standards</span> Aligned to</p>
+        <div class="union-chips" style="margin-top:0;">
+          <span class="union-chip"><span class="dot"></span>GISTM</span>
+          <span class="union-chip"><span class="dot"></span>SANS 10286</span>
+          <span class="union-chip"><span class="dot"></span>MHSA</span>
+          <span class="union-chip"><span class="dot"></span>DWS</span>
+          <span class="union-chip"><span class="dot"></span>ICOLD</span>
+          <span class="union-chip"><span class="dot"></span>ANCOLD</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CTA ============ -->
+  <section class="section-pad" id="contact">
+    <div class="wrap">
+      <div class="cta reveal">
+        <h2>Bring your tailings facilities into one evidence base.</h2>
+        <p>From a single high-consequence dam to a whole portfolio — we'll show you the streams, the ledger and the reports.</p>
+        <div class="hero-cta">
+          <a href="mailto:info@rorschach.co.za?subject=VINIS%20tailings-dam%20enquiry" class="btn btn-primary">
+            Request a demo
+            <svg viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+          <a href="case-studies.html#cases" class="btn btn-ghost">All case studies</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="footer">
+    <div class="wrap">
+      <div class="footer-grid">
+        <div>
+          <a href="index.html" class="brand">
+            <img class="mark" src="assets/vinis-mark.png" alt="" width="30" height="30" />
+            <span class="wordmark">VINIS</span>
+          </a>
+          <p class="fdesc">Autonomous inspection of vast terrain — satellite data, sensor fusion and machine vision, delivered as a service.</p>
+        </div>
+        <div class="footer-col">
+          <h6>Platform</h6>
+          <a href="platform.html#architecture">Architecture</a>
+          <a href="platform.html#capabilities">Capabilities</a>
+          <a href="platform.html#twin">Digital twins</a>
+        </div>
+        <div class="footer-col">
+          <h6>Solutions</h6>
+          <a href="solutions.html">Services</a>
+          <a href="solutions.html#use-cases">Use cases</a>
+          <a href="index.html#contact">Request a demo</a>
+        </div>
+        <div class="footer-col">
+          <h6>Case studies</h6>
+          <a href="case-studies.html#cases">Case studies</a>
+          <a href="team.html#team">Team</a>
+          <a href="team.html#partner">Investment partner</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2026 VINIS · A Rorschach Innovation Services venture</span>
+        <span>DRIVING INNOVATION IN AFRICA</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
