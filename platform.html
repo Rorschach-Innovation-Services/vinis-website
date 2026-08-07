@@ -56,30 +56,16 @@
       <div class="ph-visual reveal d1">
         <div class="ph-scene" id="phScene" data-stage="0">
           <div class="ph-beam"></div>
-          <div class="ph-pipe">
-            <svg viewBox="0 0 64 104" fill="none" aria-hidden="true">
-              <defs>
-                <clipPath id="pipeClip"><path d="M10 16 V84 A22 8 0 0 0 54 84 V16 A22 8 0 0 1 10 16 Z"/></clipPath>
-                <linearGradient id="pipeWall" x1="0" y1="0" x2="1" y2="0">
-                  <stop offset="0" stop-color="#3ad6e6" stop-opacity="0.03"/>
-                  <stop offset="0.5" stop-color="#3ad6e6" stop-opacity="0.14"/>
-                  <stop offset="1" stop-color="#3ad6e6" stop-opacity="0.03"/>
-                </linearGradient>
-              </defs>
-              <!-- tube body -->
-              <path d="M10 16 V84 A22 8 0 0 0 54 84 V16" fill="url(#pipeWall)" stroke="#3ad6e6" stroke-opacity="0.35" stroke-width="1.4"/>
-              <!-- data rings flowing down -->
-              <g clip-path="url(#pipeClip)">
-                <ellipse class="band" cx="32" cy="24" rx="22" ry="7" stroke="#3ad6e6" stroke-width="2" fill="none"/>
-                <ellipse class="band b2" cx="32" cy="24" rx="22" ry="7" stroke="#b6f24a" stroke-width="2" fill="none"/>
-                <ellipse class="band b3" cx="32" cy="24" rx="22" ry="7" stroke="#3ad6e6" stroke-width="2" fill="none"/>
-              </g>
-              <!-- bottom front edge -->
-              <path d="M10 84 A22 8 0 0 0 54 84" stroke="#3ad6e6" stroke-opacity="0.5" stroke-width="1.4" fill="none"/>
-              <!-- top opening -->
-              <ellipse cx="32" cy="16" rx="22" ry="8" fill="#0b1220" stroke="#3ad6e6" stroke-width="1.6"/>
-              <ellipse cx="32" cy="16" rx="13" ry="4.5" fill="#0e1a2c" stroke="#3ad6e6" stroke-opacity="0.5" stroke-width="1"/>
-            </svg>
+          <div class="ph-console">
+            <div class="con-top">
+              <span class="con-dot"></span><span class="con-dot"></span><span class="con-dot"></span>
+              <span class="con-title">VINIS CONSOLE</span>
+              <span class="con-live">LIVE</span>
+            </div>
+            <div class="con-body">
+              <div class="con-bars"><span></span><span></span><span></span><span class="hot"></span><span></span><span></span></div>
+              <div class="con-foot"><span class="con-status">NOMINAL</span><span class="con-metric"><b>98</b>%</span></div>
+            </div>
           </div>
 
           <!-- 01 · satellite -->
