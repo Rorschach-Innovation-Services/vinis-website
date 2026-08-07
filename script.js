@@ -85,6 +85,16 @@
 
   document.querySelectorAll('.reveal').forEach(function (el) { io.observe(el); });
 
+  // Fallback: immediately reveal anything already on-screen at load, in case the
+  // IntersectionObserver is slow to fire (keeps above-the-fold heroes from hiding).
+  requestAnimationFrame(function () {
+    var vh = window.innerHeight || document.documentElement.clientHeight;
+    document.querySelectorAll('.reveal:not(.in)').forEach(function (el) {
+      var r = el.getBoundingClientRect();
+      if (r.top < vh * 0.95 && r.bottom > 0) el.classList.add('in');
+    });
+  });
+
   // Watch the strip (count-up), chart bars, and forecast graph explicitly
   ['costBars', 'fcGraph'].forEach(function (id) {
     var el = document.getElementById(id);
