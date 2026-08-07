@@ -218,16 +218,20 @@ section { position: relative; z-index: 1; }
   -webkit-backdrop-filter: blur(18px) saturate(140%);
 }
 .brand {
-  display: flex;
+  display: grid;
+  grid-template-columns: auto auto;
   align-items: center;
-  gap: 0.7rem;
+  column-gap: 0.7rem;
+  row-gap: 0.1rem;
   font-family: var(--display);
   font-weight: 600;
   font-size: 1.2rem;
   letter-spacing: 0.16em;
 }
-.brand .mark { width: 30px; height: 30px; flex: none; }
+.brand .mark { grid-column: 1; grid-row: 1; width: 30px; height: 30px; object-fit: contain; }
+.brand .wordmark { grid-column: 2; grid-row: 1; line-height: 1; }
 .brand .sub {
+  grid-column: 2; grid-row: 2;
   font-family: var(--mono);
   font-size: 0.56rem;
   letter-spacing: 0.2em;
