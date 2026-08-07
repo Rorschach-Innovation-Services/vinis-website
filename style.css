@@ -1281,6 +1281,91 @@ section { position: relative; z-index: 1; }
 .layer.active .lname .accent { text-shadow: 0 0 22px rgba(58,214,230,0.45); }
 .layer.active .chip { border-color: var(--cyan-bdr); color: var(--text); }
 
+/* ---------- Platform hero scene (satellite → drone → sensor → person) ---------- */
+.page-header--hero { padding-top: clamp(8.5rem, 13vw, 12rem); padding-bottom: clamp(2.5rem, 6vw, 5rem); }
+.ph-grid { display: grid; grid-template-columns: 1.02fr 0.98fr; gap: clamp(2rem, 5vw, 4.5rem); align-items: center; }
+.ph-copy h1 { max-width: 15ch; }
+
+.ph-scene {
+  position: relative; aspect-ratio: 1; width: 100%; max-width: 430px; margin-inline: auto;
+  border: 1px solid var(--border); border-radius: var(--radius-lg); overflow: hidden;
+  background: radial-gradient(ellipse 100% 70% at 50% 12%, rgba(58,214,230,0.10), transparent 62%), var(--bg-card);
+}
+.ph-scene::before {
+  content: ""; position: absolute; inset: 0; pointer-events: none;
+  background-image: linear-gradient(var(--grid-line) 1px, transparent 1px), linear-gradient(90deg, var(--grid-line) 1px, transparent 1px);
+  background-size: 40px 40px; opacity: 0.5;
+  mask-image: radial-gradient(ellipse 80% 70% at 50% 50%, #000 30%, transparent 82%);
+}
+/* ground AOI (constant) */
+.ph-aoi {
+  position: absolute; left: 50%; top: 80%; width: 70px; height: 70px; transform: translate(-50%, -50%);
+  border-radius: 50%;
+  background: radial-gradient(circle at 40% 32%, #12314a, #06101a 72%);
+  box-shadow: inset 0 0 26px rgba(58,214,230,0.25), 0 0 34px -12px var(--cyan);
+  overflow: hidden;
+}
+.ph-aoi::after { content: ""; position: absolute; inset: 0;
+  background: radial-gradient(circle at 62% 66%, rgba(182,242,74,0.6) 0 6%, transparent 7%),
+              radial-gradient(circle at 38% 46%, rgba(58,214,230,0.5) 0 4%, transparent 5%); }
+/* observation beam */
+.ph-beam { position: absolute; left: 50%; top: 40%; width: 2px; height: 40%; transform: translateX(-50%);
+  background: linear-gradient(180deg, var(--cyan), transparent); opacity: 0.45; }
+.ph-beam::after { content: ""; position: absolute; left: -2px; top: 0; width: 6px; height: 6px; border-radius: 50%;
+  background: var(--cyan); box-shadow: 0 0 10px var(--cyan); animation: ph-drop 2.6s ease-in infinite; }
+@keyframes ph-drop { 0% { top: 0; opacity: 0; } 12% { opacity: 1; } 100% { top: 100%; opacity: 0; } }
+
+/* stage layers */
+.ph-stage { position: absolute; left: 0; right: 0; top: 6%; height: 60%; display: grid; place-items: center; opacity: 0; transition: opacity 0.8s ease; }
+.ph-scene[data-stage="0"] .s-sat,
+.ph-scene[data-stage="1"] .s-drone,
+.ph-scene[data-stage="2"] .s-sensor,
+.ph-scene[data-stage="3"] .s-person { opacity: 1; }
+
+/* satellite */
+.sat-rings { position: relative; width: min(58%, 160px); aspect-ratio: 1; }
+.sat-ring { position: absolute; inset: 0; border: 1px dashed var(--cyan-bdr); border-radius: 50%; opacity: 0.5; }
+.sat-ring.b { inset: 22%; border-style: solid; border-color: var(--border-2); }
+.sat-spin { position: absolute; inset: 0; animation: ph-spin 13s linear infinite; }
+.sat-icon { position: absolute; top: -12px; left: 50%; transform: translateX(-50%); width: 40px; }
+.sat-icon svg { width: 100%; height: auto; filter: drop-shadow(0 0 8px rgba(58,214,230,0.55)); }
+@keyframes ph-spin { to { transform: rotate(360deg); } }
+
+/* drone */
+.drone-svg { width: min(64%, 185px); height: auto; animation: ph-bob 3.4s ease-in-out infinite; filter: drop-shadow(0 0 10px rgba(58,214,230,0.35)); }
+@keyframes ph-bob { 0%, 100% { transform: translateY(-4px); } 50% { transform: translateY(6px); } }
+.drone-svg .rotor { transform-box: fill-box; transform-origin: center; animation: ph-rotor 0.18s linear infinite; }
+@keyframes ph-rotor { 50% { transform: scaleX(0.18); } }
+
+/* sensor */
+.sensor-wrap { position: relative; display: grid; place-items: center; width: min(56%, 155px); aspect-ratio: 1; }
+.sensor-svg { width: 42%; height: auto; position: relative; z-index: 1; filter: drop-shadow(0 0 8px rgba(58,214,230,0.4)); }
+.sensor-wrap .pulse { position: absolute; left: 50%; top: 40%; width: 36px; height: 36px; margin: -18px 0 0 -18px; border: 1.5px solid var(--cyan); border-radius: 50%; opacity: 0; animation: ph-pulse 2.4s ease-out infinite; }
+.sensor-wrap .pulse.p2 { animation-delay: 0.8s; }
+.sensor-wrap .pulse.p3 { animation-delay: 1.6s; }
+@keyframes ph-pulse { 0% { transform: scale(0.3); opacity: 0.9; } 100% { transform: scale(3.4); opacity: 0; } }
+
+/* person */
+.person-svg { width: min(42%, 132px); height: auto; filter: drop-shadow(0 0 8px rgba(58,214,230,0.35)); }
+.person-svg .tablet { animation: ph-glow 2.2s ease-in-out infinite; }
+@keyframes ph-glow { 0%, 100% { opacity: 0.5; } 50% { opacity: 1; } }
+
+/* label + dots */
+.ph-label { position: absolute; left: 1.1rem; bottom: 1.1rem; font-family: var(--mono); font-size: var(--t-xs); letter-spacing: 0.1em; color: var(--text-2); text-transform: uppercase; }
+.ph-label .ph-num { color: var(--cyan); margin-right: 0.5rem; }
+.ph-dots { position: absolute; right: 1.1rem; bottom: 1.15rem; display: flex; gap: 0.4rem; }
+.ph-dots span { width: 7px; height: 7px; border-radius: 50%; background: var(--text-4); transition: var(--ease); }
+.ph-scene[data-stage="0"] .ph-dots span:nth-child(1),
+.ph-scene[data-stage="1"] .ph-dots span:nth-child(2),
+.ph-scene[data-stage="2"] .ph-dots span:nth-child(3),
+.ph-scene[data-stage="3"] .ph-dots span:nth-child(4) { background: var(--cyan); width: 18px; border-radius: 5px; }
+
+@media (max-width: 900px) {
+  .ph-grid { grid-template-columns: 1fr; }
+  .ph-visual { order: -1; }
+  .ph-scene { max-width: 340px; }
+}
+
 /* ---------- Brand mark image ---------- */
 .brand .mark { object-fit: contain; }
 
