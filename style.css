@@ -1277,3 +1277,26 @@ section { position: relative; z-index: 1; }
 .layer.active .lname .accent { text-shadow: 0 0 22px rgba(58,214,230,0.45); }
 .layer.active .chip { border-color: var(--cyan-bdr); color: var(--text); }
 
+/* ---------- Brand mark image ---------- */
+.brand .mark { object-fit: contain; }
+
+/* ---------- Landing intro (home) ---------- */
+body.intro-lock { overflow: hidden; }
+.intro {
+  position: fixed; inset: 0; z-index: 3000;
+  background: #f2efec;
+  display: grid; place-items: center;
+  opacity: 1; transition: opacity 0.75s ease;
+}
+.intro.hide { opacity: 0; pointer-events: none; }
+.intro-video { width: 100%; height: 100%; object-fit: contain; display: block; }
+.intro-skip {
+  position: absolute; bottom: max(4vh, 1.4rem); right: max(4vw, 1.4rem);
+  font-family: var(--mono); font-size: var(--t-xs); letter-spacing: 0.14em; text-transform: uppercase;
+  color: #5a6472; background: rgba(255, 255, 255, 0.6);
+  border: 1px solid rgba(0, 0, 0, 0.14); border-radius: 100px; padding: 0.5rem 1.1rem;
+  transition: var(--ease); cursor: pointer;
+}
+.intro-skip:hover { color: #0f8ea0; border-color: rgba(0, 0, 0, 0.3); }
+@media (prefers-reduced-motion: reduce) { .intro { display: none; } }
+

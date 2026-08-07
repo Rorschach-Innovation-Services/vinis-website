@@ -10,19 +10,23 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='6' fill='none' stroke='%233ad6e6' stroke-width='2'/%3E%3Ccircle cx='16' cy='16' r='13' fill='none' stroke='%233ad6e6' stroke-width='1' stroke-dasharray='3 3' opacity='.6'/%3E%3Ccircle cx='16' cy='3' r='2.5' fill='%23b6f24a'/%3E%3C/svg%3E" />
+  <link rel="icon" type="image/png" href="assets/vinis-mark.png" />
 </head>
 <body>
+
+  <!-- ============ LANDING INTRO ============ -->
+  <div class="intro" id="intro" role="presentation">
+    <video class="intro-video" id="introVideo" muted playsinline preload="auto" aria-hidden="true">
+      <source src="assets/vinis-logo-animation.mp4" type="video/mp4" />
+    </video>
+    <button class="intro-skip" id="introSkip" type="button">Skip intro</button>
+  </div>
 
   <!-- ============ NAV ============ -->
   <nav class="nav" id="nav">
     <div class="wrap nav-inner">
       <a href="index.html" class="brand" aria-label="VINIS home">
-        <svg class="mark" viewBox="0 0 32 32" fill="none" aria-hidden="true">
-          <circle cx="16" cy="16" r="6" stroke="#3ad6e6" stroke-width="2"/>
-          <circle cx="16" cy="16" r="13" stroke="#3ad6e6" stroke-width="1" stroke-dasharray="3 3" opacity=".6"/>
-          <circle cx="16" cy="3" r="2.5" fill="#b6f24a"/>
-        </svg>
+        <img class="mark" src="assets/vinis-mark.png" alt="" width="30" height="30" />
         <span>VINIS<br><span class="sub">Vast Infrastructure Inspection</span></span>
       </a>
       <div class="nav-links" id="navLinks">
@@ -256,11 +260,7 @@
       <div class="footer-grid">
         <div>
           <a href="index.html" class="brand">
-            <svg class="mark" viewBox="0 0 32 32" fill="none" aria-hidden="true">
-              <circle cx="16" cy="16" r="6" stroke="#3ad6e6" stroke-width="2"/>
-              <circle cx="16" cy="16" r="13" stroke="#3ad6e6" stroke-width="1" stroke-dasharray="3 3" opacity=".6"/>
-              <circle cx="16" cy="3" r="2.5" fill="#b6f24a"/>
-            </svg>
+            <img class="mark" src="assets/vinis-mark.png" alt="" width="30" height="30" />
             <span>VINIS</span>
           </a>
           <p class="fdesc">Autonomous inspection of vast terrain — satellite data, sensor fusion and machine vision, delivered as a service.</p>
@@ -292,5 +292,47 @@
   </footer>
 
   <script src="script.js"></script>
+  <script>
+  /* ---- Landing intro: play the logo animation (sped up), then reveal the site ---- */
+  (function () {
+    var intro = document.getElementById('intro');
+    if (!intro) return;
+    var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    var seen = false;
+    try { seen = sessionStorage.getItem('vinis_intro') === '1'; } catch (e) {}
+
+    function remove() {
+      document.body.classList.remove('intro-lock');
+      if (intro && intro.parentNode) intro.parentNode.removeChild(intro);
+    }
+
+    // Returning visitor this session, or reduced-motion: no intro.
+    if (seen || reduce) { remove(); return; }
+
+    document.body.classList.add('intro-lock');
+    var v = document.getElementById('introVideo');
+    var SPEED = 2.5;            // ~11s clip → ~4.4s landing animation
+    var done = false;
+
+    function finish() {
+      if (done) return;
+      done = true;
+      try { sessionStorage.setItem('vinis_intro', '1'); } catch (e) {}
+      intro.classList.add('hide');
+      setTimeout(remove, 800);   // after the fade-out
+    }
+
+    document.getElementById('introSkip').addEventListener('click', finish);
+    v.addEventListener('loadedmetadata', function () { v.playbackRate = SPEED; });
+    v.playbackRate = SPEED;
+    v.addEventListener('ended', finish);
+    v.addEventListener('error', finish);
+    // Safety net: never trap the visitor if the clip stalls or autoplay is blocked.
+    setTimeout(finish, 6500);
+
+    var p = v.play();
+    if (p && p.catch) { p.catch(function () { finish(); }); }
+  })();
+  </script>
 </body>
 </html>
